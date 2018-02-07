@@ -19,7 +19,8 @@ extension NSAttributedString {
             let mutable = NSMutableAttributedString()
             
             for token in result.tokens {
-                let attributed = final.attributedSubstring(from: token.range)
+                let attributes = final.attributes(at: token.matchRange.location, effectiveRange: nil)
+                let attributed = NSAttributedString(string: token.value, attributes: attributes)
                 let transformed = token.property.transform(string: attributed)
                 mutable.append(transformed)
             }

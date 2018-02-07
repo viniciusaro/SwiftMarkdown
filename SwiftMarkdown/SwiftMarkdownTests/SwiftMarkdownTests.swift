@@ -45,6 +45,10 @@ class SwiftMarkdownTests: QuickSpec {
                 label.attributedText = "Swift Markdown* Library".buttonCaption.markdown
                 expect(label).to(haveValidSnapshot())
             }
+            it("with multiple matches") {
+                label.attributedText = "**Swift** Markdown **Library**".buttonCaption.markdown
+                expect(label).to(haveValidSnapshot())
+            }
         }
     }
 }

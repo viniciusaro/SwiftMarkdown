@@ -18,7 +18,7 @@ public struct TokenResult {
 
 public struct Token {
     let value: String
-    let range: NSRange
+    let matchRange: NSRange
     let property: MarkdownProperty
 }
 
@@ -44,14 +44,17 @@ public final class MarkdownParser {
         for match in matches {
             let property = self.findPropertyFor(match: match, string: string, options: options)
             
-            let from = match.range.location + property.prefixSize
-            let to = match.range.location + match.range.length - property.suffixSize
+            let from = match.range.location
+            let to = match.range.location + match.range.length
+            let prefix = property.prefix.replacingOccurrences(of: "\\", with: "")
+            let suffix = property.suffix.replacingOccurrences(of: "\\", with: "")
             
-            let rangeLength = match.range.length - property.prefixSize - property.suffixSize
-            let range = NSRange(location: from, length: rangeLength)
+            let value = string[from..<to]
+            let token = value
+                .replacingOccurrences(of: prefix, with: "")
+                .replacingOccurrences(of: suffix, with: "")
             
-            let token = string[from..<to]
-            tokens.append(Token(value: token, range: range, property: property))
+            tokens.append(Token(value: token, matchRange: match.range, property: property))
         }
         
         return TokenResult(tokens: tokens)

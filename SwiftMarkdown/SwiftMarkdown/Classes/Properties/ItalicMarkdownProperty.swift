@@ -9,18 +9,6 @@ final class ItalicMarkdownProperty: MarkdownProperty {
         return "\\*"
     }
     
-    var prefixSize: Int {
-        return 1
-    }
-    
-    var suffixSize: Int {
-        return 1
-    }
-    
-    var needsEscaping: Bool {
-        return true
-    }
-    
     func transform(string original: NSAttributedString) -> NSAttributedString {
         return original.withSymbolicTraits(.traitItalic)
     }
