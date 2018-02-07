@@ -3,6 +3,11 @@ import UIKit
 extension NSAttributedString {
     func withSymbolicTraits(_ traits: UIFontDescriptorSymbolicTraits) -> NSAttributedString {
         var range = self.string.fullRange
+        
+        guard range.length > 0 else {
+            return self
+        }
+        
         let defaultFont = UIFont.systemFont(ofSize: UIFont.systemFontSize)
         let font = self.attribute(.font, at: 0, effectiveRange: &range) as? UIFont ?? defaultFont
         

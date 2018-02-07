@@ -11,7 +11,7 @@ public protocol MarkdownProperty {
 
 extension MarkdownProperty {
     var bodyPattern: String {
-        return "[\\w\\d .,&%#@$]*"
+        return "[\\w\\d .,&%#@$]+"
     }
     
     var prefixSize: Int {

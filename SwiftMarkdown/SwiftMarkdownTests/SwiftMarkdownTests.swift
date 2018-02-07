@@ -1,36 +1,50 @@
-//
-//  SwiftMarkdownTests.swift
-//  SwiftMarkdownTests
-//
-//  Created by Vinicius Alves Rodrigues on 2/7/18.
-//  Copyright © 2018 SwiftMarkdown. All rights reserved.
-//
-
-import XCTest
+import Quick
+import Nimble
+import Nimble_Snapshots
+import UIKit
 @testable import SwiftMarkdown
 
-class SwiftMarkdownTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+class SwiftMarkdownTests: QuickSpec {
+    override func spec() {
+        describe("should render correctly") {
+            var label: UILabel!
+            beforeEach {
+                label = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 300, height: 200)))
+                label.backgroundColor = .white
+                label.textAlignment = .center
+            }
+            it("with no formatting") {
+                label.attributedText = "Swift Markdown Library".buttonCaption.markdown
+                expect(label).to(haveValidSnapshot())
+            }
+            it("with bold string") {
+                label.attributedText = "Swift **Markdown** Library".buttonCaption.markdown
+                expect(label).to(haveValidSnapshot())
+            }
+            it("with italic string") {
+                label.attributedText = "Swift *Markdown* Library".buttonCaption.markdown
+                expect(label).to(haveValidSnapshot())
+            }
+            it("with strikethrough string") {
+                label.attributedText = "Swift ~~Markdown~~ Library".buttonCaption.markdown
+                expect(label).to(haveValidSnapshot())
+            }
+            it("with italic strikethrough string") {
+                label.attributedText = "Swift *~~Markdown~~* Library".buttonCaption.markdown
+                expect(label).to(haveValidSnapshot())
+            }
+            it("with italic strikethrough (inverse) string") {
+                label.attributedText = "Swift ~~*Markdown*~~ Library".buttonCaption.markdown
+                expect(label).to(haveValidSnapshot())
+            }
+            it("with wrong bold formatting") {
+                label.attributedText = "Swift **Markdown* Library".buttonCaption.markdown
+                expect(label).to(haveValidSnapshot())
+            }
+            it("with asterisks as string") {
+                label.attributedText = "Swift Markdown* Library".buttonCaption.markdown
+                expect(label).to(haveValidSnapshot())
+            }
         }
     }
-    
 }

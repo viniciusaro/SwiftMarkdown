@@ -19,6 +19,7 @@
 		63DF8851202B22FE007155D6 /* ItalicMarkdownProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF8849202B22FE007155D6 /* ItalicMarkdownProperty.swift */; };
 		63DF8852202B22FE007155D6 /* MarkdownParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF884A202B22FE007155D6 /* MarkdownParser.swift */; };
 		63DF8856202B2338007155D6 /* NSAttributedString+SymbolicTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF8855202B2338007155D6 /* NSAttributedString+SymbolicTraits.swift */; };
+		63DF8858202B273E007155D6 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF8857202B273E007155D6 /* Font.swift */; };
 		C6E76AC6A26AB9CE1839D19A /* Pods_SwiftMarkdownTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860AECA845C33D088B4D9772 /* Pods_SwiftMarkdownTests.framework */; };
 		D6581A2139C17FD92032E69A /* Pods_SwiftMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAA4B2A6A0B041A300613547 /* Pods_SwiftMarkdown.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		63DF8849202B22FE007155D6 /* ItalicMarkdownProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItalicMarkdownProperty.swift; sourceTree = "<group>"; };
 		63DF884A202B22FE007155D6 /* MarkdownParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownParser.swift; sourceTree = "<group>"; };
 		63DF8855202B2338007155D6 /* NSAttributedString+SymbolicTraits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+SymbolicTraits.swift"; sourceTree = "<group>"; };
+		63DF8857202B273E007155D6 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		860AECA845C33D088B4D9772 /* Pods_SwiftMarkdownTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMarkdownTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C0766F82407C770405FAB4 /* Pods-SwiftMarkdownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMarkdownTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMarkdownTests/Pods-SwiftMarkdownTests.debug.xcconfig"; sourceTree = "<group>"; };
 		97A90D17D2CC9255DDE90626 /* Pods-SwiftMarkdownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMarkdownTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMarkdownTests/Pods-SwiftMarkdownTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,8 +122,9 @@
 		63DF8832202B2260007155D6 /* SwiftMarkdownTests */ = {
 			isa = PBXGroup;
 			children = (
-				63DF8833202B2260007155D6 /* SwiftMarkdownTests.swift */,
 				63DF8835202B2260007155D6 /* Info.plist */,
+				63DF8857202B273E007155D6 /* Font.swift */,
+				63DF8833202B2260007155D6 /* SwiftMarkdownTests.swift */,
 			);
 			path = SwiftMarkdownTests;
 			sourceTree = "<group>";
@@ -313,9 +316,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SwiftMarkdownTests/Pods-SwiftMarkdownTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FBSnapshotTestCase/FBSnapshotTestCase.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble-Snapshots/Nimble_Snapshots.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSnapshotTestCase.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble_Snapshots.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -393,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63DF8858202B273E007155D6 /* Font.swift in Sources */,
 				63DF8834202B2260007155D6 /* SwiftMarkdownTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -572,7 +585,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 87C0766F82407C770405FAB4 /* Pods-SwiftMarkdownTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X36AT7C9SA;
 				INFOPLIST_FILE = SwiftMarkdownTests/Info.plist;
@@ -588,7 +600,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 97A90D17D2CC9255DDE90626 /* Pods-SwiftMarkdownTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X36AT7C9SA;
 				INFOPLIST_FILE = SwiftMarkdownTests/Info.plist;
