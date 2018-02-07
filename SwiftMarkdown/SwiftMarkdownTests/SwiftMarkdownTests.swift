@@ -49,6 +49,10 @@ class SwiftMarkdownTests: QuickSpec {
                 label.attributedText = "**Swift** Markdown **Library**".buttonCaption.markdown
                 expect(label).to(haveValidSnapshot())
             }
+            it("with empty string") {
+                label.attributedText = "".buttonCaption.markdown
+                expect(label).to(haveValidSnapshot())
+            }
         }
     }
 }
