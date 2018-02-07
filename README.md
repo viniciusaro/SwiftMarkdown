@@ -2,6 +2,8 @@
 
 SwiftMarkdown is library for parsing and formatting strings with markdown tags
 
+![Travis](https://travis-ci.org/viniciusaro/SwiftMarkdown.svg?branch=master)
+
 ## Usage
 
 Simply mark your strings with markdown tags and then use the `markdown` property of your already created NSAttributedStrings
