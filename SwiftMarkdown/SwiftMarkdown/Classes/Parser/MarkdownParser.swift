@@ -1,41 +1,19 @@
 import Foundation
 
-public struct TokenResult {
-    public let tokens: [Token]
-    
-    public var nonEmptyTokens: [Token] {
-        return self.tokens.filter({ $0.property is EmptyMarkdownProperty == false })
-    }
-    
-    public var hasNonEmptyTokens: Bool {
-        return self.nonEmptyTokens.count > 0
-    }
-    
-    public static var empty: TokenResult {
-        return TokenResult(tokens: [])
-    }
-}
-
-public struct Token {
-    let value: String
-    let matchRange: NSRange
-    let property: MarkdownProperty
-}
-
-public final class MarkdownParser {
+final class MarkdownParser {
     private let properties: [MarkdownProperty]
     private let combinedPattern: String
     
-    public init(properties: [MarkdownProperty]) {
+    init(properties: [MarkdownProperty]) {
         self.properties = properties + [EmptyMarkdownProperty()]
         self.combinedPattern = String(self.properties.reduce("(", { $0 + $1.pattern + "|" }).dropLast() + ")")
     }
     
-    public func unfailableParse(string: String) -> TokenResult {
+    func unfailableParse(string: String) -> TokenResult {
         return (try? self.parse(string: string)) ?? .empty
     }
     
-    public func parse(string: String) throws -> TokenResult {
+    func parse(string: String) throws -> TokenResult {
         var tokens: [Token] = []
         let regularExpression = try NSRegularExpression(pattern: self.combinedPattern, options: [.caseInsensitive])
         let options: NSRegularExpression.MatchingOptions = .reportProgress

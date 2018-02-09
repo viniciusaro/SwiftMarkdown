@@ -1,15 +1,27 @@
 import Foundation
 import UIKit
 
+extension String {
+    public func markdown(font: UIFont) -> NSAttributedString {
+        return NSAttributedString(string: self, attributes: [.font: font]).markdown
+    }
+}
+
 extension NSAttributedString {
     public var markdown: NSAttributedString {
-        return self.markdown(withProperties: [
+        return self.markdown(withProperties: self.markdownProperties)
+    }
+    
+    private var markdownProperties: [MarkdownProperty] {
+        return [
             BoldMarkdownProperty(),
             ItalicMarkdownProperty(),
             StrikethroughMarkdownProperty()
-        ])
+        ]
     }
-    
+}
+
+extension NSAttributedString {
     public func markdown(withProperties properties: [MarkdownProperty]) -> NSAttributedString {
         let parser = MarkdownParser(properties: properties)
         var result = parser.unfailableParse(string: self.string)

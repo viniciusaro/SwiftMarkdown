@@ -1,19 +1,19 @@
 import Foundation
 
-final class EmptyMarkdownProperty: MarkdownProperty {
-    var prefix: String {
+public final class EmptyMarkdownProperty: MarkdownProperty {
+    public var prefix: String {
         return ""
     }
     
-    var suffix: String {
+    public var suffix: String {
         return ""
     }
     
-    var bodyPattern: String {
+    public var bodyPattern: String {
         return "."
     }
     
-    func transform(string original: NSAttributedString) -> NSAttributedString {
+    public func transform(string original: NSAttributedString) -> NSAttributedString {
         return original
     }
 }

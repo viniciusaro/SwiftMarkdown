@@ -4,4 +4,4 @@ xcode_scheme: SwiftMarkdownTests
 osx_image: xcode9.2
 
 env:
-  - scheme='Siesta iOS'   platform='iOS Simulator' ios_version='11.2' ios_device='iPhone 8 Plus'
+  - scheme='SwiftMarkdown'   platform='iOS Simulator' ios_version='11.2' ios_device='iPhone 8 Plus'

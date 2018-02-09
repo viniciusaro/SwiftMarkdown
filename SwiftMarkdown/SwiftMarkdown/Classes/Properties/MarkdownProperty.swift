@@ -7,7 +7,7 @@ public protocol MarkdownProperty {
     func transform(string: NSAttributedString) -> NSAttributedString
 }
 
-extension MarkdownProperty {
+public extension MarkdownProperty {
     var bodyPattern: String {
         return "(.+?)"
     }

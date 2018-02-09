@@ -1,15 +1,15 @@
 import Foundation
 
-final class ItalicMarkdownProperty: MarkdownProperty {
-    var prefix: String {
+public final class ItalicMarkdownProperty: MarkdownProperty {
+    public var prefix: String {
         return "\\*"
     }
     
-    var suffix: String {
+    public var suffix: String {
         return "\\*"
     }
     
-    func transform(string original: NSAttributedString) -> NSAttributedString {
+    public func transform(string original: NSAttributedString) -> NSAttributedString {
         return original.withSymbolicTraits(.traitItalic)
     }
 }

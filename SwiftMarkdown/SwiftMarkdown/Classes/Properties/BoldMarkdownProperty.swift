@@ -1,15 +1,15 @@
 import Foundation
 
-final class BoldMarkdownProperty: MarkdownProperty {
-    var prefix: String {
+public final class BoldMarkdownProperty: MarkdownProperty {
+    public var prefix: String {
         return "\\*\\*"
     }
     
-    var suffix: String {
+    public var suffix: String {
         return "\\*\\*"
     }
     
-    func transform(string original: NSAttributedString) -> NSAttributedString {
+    public func transform(string original: NSAttributedString) -> NSAttributedString {
         return original.withSymbolicTraits(.traitBold)
     }
 }
