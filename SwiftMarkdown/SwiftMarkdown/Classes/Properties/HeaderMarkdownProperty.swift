@@ -5,12 +5,12 @@ public final class HeaderMarkdownProperty: MarkdownProperty {
     private let number: UInt
     
     private let scaleTable: [String: CGFloat] = [
-        "#": 2,
-        "##": 1.5,
-        "###": 1.17,
-        "####": 1,
-        "#####": 0.83,
-        "######": 0.67,
+        "^#": 2,
+        "^##": 1.5,
+        "^###": 1.17,
+        "^####": 1,
+        "^#####": 0.83,
+        "^######": 0.67,
     ]
 
     private var sizeFactor: CGFloat {
@@ -18,7 +18,7 @@ public final class HeaderMarkdownProperty: MarkdownProperty {
     }
     
     public var prefix: String {
-        return "#".repeated(self.number)
+        return "^" + "#".repeated(self.number)
     }
     
     public var suffix: String {

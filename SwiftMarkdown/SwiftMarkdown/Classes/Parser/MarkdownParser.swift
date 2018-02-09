@@ -15,17 +15,23 @@ final class MarkdownParser {
     
     func parse(string: String) throws -> TokenResult {
         var tokens: [Token] = []
-        let regularExpression = try NSRegularExpression(pattern: self.combinedPattern, options: [.caseInsensitive])
-        let options: NSRegularExpression.MatchingOptions = .reportProgress
-        let matches = regularExpression.matches(in: string, options: options, range: string.fullRange)
+        let options = [.caseInsensitive, .anchorsMatchLines] as NSRegularExpression.Options
+        let regularExpression = try NSRegularExpression(pattern: self.combinedPattern, options: options)
+        let matchingOptions: NSRegularExpression.MatchingOptions = .reportProgress
+        let matches = regularExpression.matches(in: string, options: matchingOptions, range: string.fullRange)
         
         for match in matches {
-            let property = self.findPropertyFor(match: match, string: string, options: options)
+            let property = self.findPropertyFor(match: match, string: string, options: matchingOptions)
             
             let from = match.range.location
             let to = match.range.location + match.range.length
-            let prefix = property.prefix.replacingOccurrences(of: "\\", with: "")
-            let suffix = property.suffix.replacingOccurrences(of: "\\", with: "")
+            let prefix = property.prefix
+                .replacingOccurrences(of: "\\", with: "")
+                .replacingOccurrences(of: "^", with: "")
+            
+            let suffix = property.suffix
+                .replacingOccurrences(of: "\\", with: "")
+                .replacingOccurrences(of: "^", with: "")
             
             let value = string[from..<to]
             let token = value

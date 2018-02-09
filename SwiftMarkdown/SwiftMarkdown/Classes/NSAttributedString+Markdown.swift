@@ -23,7 +23,6 @@ extension NSAttributedString {
             BoldMarkdownProperty(),
             ItalicMarkdownProperty(),
             StrikethroughMarkdownProperty()
-            
         ]
     }
 }

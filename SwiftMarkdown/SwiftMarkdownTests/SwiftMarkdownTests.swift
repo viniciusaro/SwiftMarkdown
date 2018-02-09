@@ -78,6 +78,7 @@ class SwiftMarkdownTests: QuickSpec {
                                        #### Swift Markdown Library \n
                                        ##### Swift Markdown Library \n
                                        ###### Swift Markdown Library \n
+                                        Swift Markdown ###### Library \n
                                        """.uppercased().markdown(font: label.font)
                 expect(label).to(haveValidSnapshot())
             }
