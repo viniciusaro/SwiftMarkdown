@@ -1,7 +1,13 @@
 language: swift
-xcode_workspace: SwiftMarkdown/SwiftMarkdown.xcworkspace # path to your xcodeproj folder
-xcode_scheme: SwiftMarkdownTests
+
 osx_image: xcode9.2
 
-env:
-  - scheme='SwiftMarkdown'   platform='iOS Simulator' ios_version='11.2' ios_device='iPhone 8 Plus'
+before_install: 
+  - bundle install
+  - bundle exec pod install --project-directory=SwiftMarkdown
+
+script: "xcodebuild test \
+  -workspace SwiftMarkdown/SwiftMarkdown.xcworkspace \
+  -scheme SwiftMarkdownTests \
+  -sdk iphonesimulator11.2 \
+  -destination 'name=iPhone 8 Plus'"
