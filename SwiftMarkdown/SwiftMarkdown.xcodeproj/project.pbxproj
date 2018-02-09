@@ -162,8 +162,8 @@
 				63DF8E32202D602C007155D6 /* HeaderMarkdownProperty.swift */,
 				63DF8849202B22FE007155D6 /* ItalicMarkdownProperty.swift */,
 				63DF8845202B22FE007155D6 /* MarkdownProperty.swift */,
-				63DF8847202B22FE007155D6 /* StrikethroughMarkdownProperty.swift */,
 				63C3D927202DCE94009BFE1F /* MarkdownTag.swift */,
+				63DF8847202B22FE007155D6 /* StrikethroughMarkdownProperty.swift */,
 			);
 			path = Properties;
 			sourceTree = "<group>";

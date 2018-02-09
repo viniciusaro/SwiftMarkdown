@@ -61,10 +61,10 @@ class SwiftMarkdownTests: QuickSpec {
             }
             it("with multiple lines text") {
                 label.attributedText = """
-                                       Swift **Markdown** Library \n
-                                       Swift ~~Markdown~~ Library \n
-                                       Swift *Markdown* Library \n
-                                       Swift ~~**Markdown**~~ Library \n
+                                       Swift **Markdown** Library
+                                       Swift ~~Markdown~~ Library
+                                       Swift *Markdown* Library
+                                       Swift ~~**Markdown**~~ Library
                                        """.buttonCaption.markdown
                 expect(label).to(haveValidSnapshot())
             }
@@ -72,13 +72,13 @@ class SwiftMarkdownTests: QuickSpec {
                 label.frame = CGRect(origin: .zero, size: CGSize(width: 450, height: 200))
                 label.textAlignment = .left
                 label.attributedText = """
-                                       # Swift Markdown Library \n
-                                       ## Swift Markdown Library \n
-                                       ### Swift Markdown Library \n
-                                       #### Swift Markdown Library \n
-                                       ##### Swift Markdown Library \n
-                                       ###### Swift Markdown Library \n
-                                        Swift Markdown ###### Library \n
+                                       # Swift Markdown Library
+                                       ## Swift Markdown Library
+                                       ### Swift ~~Markdown~~ Library
+                                       #### Swift Markdown Library
+                                       ##### Swift Markdown Library
+                                       ###### Swift Markdown Library
+                                        Swift Markdown ###### Library
                                        """.uppercased().markdown(font: label.font)
                 expect(label).to(haveValidSnapshot())
             }

@@ -12,10 +12,10 @@ To have your label formatted like the above your code would look like the follow
 
 ```swift
 let string = """
-  Swift **Markdown** Library \n
-  Swift ~~Markdown~~ Library \n
-  Swift *Markdown* Library \n
-  Swift ~~**Markdown**~~ Library \n
+  Swift **Markdown** Library
+  Swift ~~Markdown~~ Library
+  Swift *Markdown* Library
+  Swift ~~**Markdown**~~ Library
   """.uppercased()
 
 label.attributedText = string.markdown(font: label.font)

@@ -17,6 +17,8 @@ public extension MarkdownProperty {
     }
     
     var regex: NSRegularExpression? {
-        return try? NSRegularExpression(pattern: self.pattern, options: [.caseInsensitive, .anchorsMatchLines])
+        return try? NSRegularExpression(pattern: self.pattern, options: [.caseInsensitive,
+                                                                         .anchorsMatchLines,
+                                                                         .dotMatchesLineSeparators])
     }
 }

@@ -15,7 +15,7 @@ final class MarkdownParser {
     
     func parse(string: String) throws -> TokenResult {
         var tokens: [Token] = []
-        let options = [.caseInsensitive, .anchorsMatchLines] as NSRegularExpression.Options
+        let options = [.caseInsensitive, .anchorsMatchLines, .dotMatchesLineSeparators] as NSRegularExpression.Options
         let regularExpression = try NSRegularExpression(pattern: self.combinedPattern, options: options)
         let matchingOptions: NSRegularExpression.MatchingOptions = .reportProgress
         let matches = regularExpression.matches(in: string, options: matchingOptions, range: string.fullRange)
