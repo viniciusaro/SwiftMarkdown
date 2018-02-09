@@ -25,13 +25,8 @@ final class MarkdownParser {
             
             let from = match.range.location
             let to = match.range.location + match.range.length
-            let prefix = property.prefix
-                .replacingOccurrences(of: "\\", with: "")
-                .replacingOccurrences(of: "^", with: "")
-            
-            let suffix = property.suffix
-                .replacingOccurrences(of: "\\", with: "")
-                .replacingOccurrences(of: "^", with: "")
+            let prefix = property.prefix.sanitized
+            let suffix = property.suffix.sanitized
             
             let value = string[from..<to]
             let token = value

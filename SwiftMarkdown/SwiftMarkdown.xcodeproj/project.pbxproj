@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63C3D928202DCE94009BFE1F /* MarkdownTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63C3D927202DCE94009BFE1F /* MarkdownTag.swift */; };
 		63DF882F202B2260007155D6 /* SwiftMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63DF8825202B2260007155D6 /* SwiftMarkdown.framework */; };
 		63DF8834202B2260007155D6 /* SwiftMarkdownTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF8833202B2260007155D6 /* SwiftMarkdownTests.swift */; };
 		63DF8836202B2260007155D6 /* SwiftMarkdown.h in Headers */ = {isa = PBXBuildFile; fileRef = 63DF8828202B2260007155D6 /* SwiftMarkdown.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		2DD6BEB9BABE0DE1A33A193E /* Pods-SwiftMarkdown.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMarkdown.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMarkdown/Pods-SwiftMarkdown.release.xcconfig"; sourceTree = "<group>"; };
+		63C3D927202DCE94009BFE1F /* MarkdownTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownTag.swift; sourceTree = "<group>"; };
 		63DF8825202B2260007155D6 /* SwiftMarkdown.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftMarkdown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63DF8828202B2260007155D6 /* SwiftMarkdown.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftMarkdown.h; sourceTree = "<group>"; };
 		63DF882E202B2260007155D6 /* SwiftMarkdownTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftMarkdownTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +163,7 @@
 				63DF8849202B22FE007155D6 /* ItalicMarkdownProperty.swift */,
 				63DF8845202B22FE007155D6 /* MarkdownProperty.swift */,
 				63DF8847202B22FE007155D6 /* StrikethroughMarkdownProperty.swift */,
+				63C3D927202DCE94009BFE1F /* MarkdownTag.swift */,
 			);
 			path = Properties;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				63DF8850202B22FE007155D6 /* BoldMarkdownProperty.swift in Sources */,
 				63DF8E31202D4A5D007155D6 /* Token.swift in Sources */,
 				63DF8851202B22FE007155D6 /* ItalicMarkdownProperty.swift in Sources */,
+				63C3D928202DCE94009BFE1F /* MarkdownTag.swift in Sources */,
 				63DF884C202B22FE007155D6 /* NSAttributedString+Markdown.swift in Sources */,
 				63DF884F202B22FE007155D6 /* StrikethroughMarkdownProperty.swift in Sources */,
 				63DF8856202B2338007155D6 /* NSAttributedString+SymbolicTraits.swift in Sources */,

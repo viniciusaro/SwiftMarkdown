@@ -1,8 +1,8 @@
 import Foundation
 
 public protocol MarkdownProperty {
-    var prefix: String { get }
-    var suffix: String { get }
+    var prefix: MarkdownTag { get }
+    var suffix: MarkdownTag { get }
     var bodyPattern: String { get }
     func transform(string original: NSAttributedString) -> NSAttributedString
 }
@@ -13,10 +13,10 @@ public extension MarkdownProperty {
     }
     
     var pattern: String {
-        return self.prefix + self.bodyPattern + self.suffix
+        return self.prefix.value + self.bodyPattern + self.suffix.value
     }
     
     var regex: NSRegularExpression? {
-        return try? NSRegularExpression(pattern: self.pattern, options: [.caseInsensitive])
+        return try? NSRegularExpression(pattern: self.pattern, options: [.caseInsensitive, .anchorsMatchLines])
     }
 }

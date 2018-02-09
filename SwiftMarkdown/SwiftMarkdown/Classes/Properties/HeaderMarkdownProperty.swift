@@ -14,14 +14,14 @@ public final class HeaderMarkdownProperty: MarkdownProperty {
     ]
 
     private var sizeFactor: CGFloat {
-        return self.scaleTable[self.prefix] ?? 1
+        return self.scaleTable[self.prefix.value] ?? 1
     }
     
-    public var prefix: String {
-        return "^" + "#".repeated(self.number)
+    public var prefix: MarkdownTag {
+        return MarkdownTag("^" + "#".repeated(self.number))
     }
     
-    public var suffix: String {
+    public var suffix: MarkdownTag {
         return "\\n"
     }
     

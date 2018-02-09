@@ -1,11 +1,11 @@
 import Foundation
 
 public final class ItalicMarkdownProperty: MarkdownProperty {
-    public var prefix: String {
+    public var prefix: MarkdownTag {
         return "\\*"
     }
     
-    public var suffix: String {
+    public var suffix: MarkdownTag {
         return "\\*"
     }
     

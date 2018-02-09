@@ -1,11 +1,11 @@
 import UIKit
 
 final class StrikethroughMarkdownProperty: MarkdownProperty {
-    var prefix: String {
+    var prefix: MarkdownTag {
         return "~~"
     }
     
-    var suffix: String {
+    var suffix: MarkdownTag {
         return "~~"
     }
     
