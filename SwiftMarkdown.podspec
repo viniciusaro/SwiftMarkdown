@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SwiftMarkdown"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "Library for formatting markdown in swift"
   s.description  = "SwiftMarkdown is library for parsing and formatting strings with markdown tags"
   s.author       = { "Vinicius Rodrigues" => "vinicius.a.ro@gmail.com" }
