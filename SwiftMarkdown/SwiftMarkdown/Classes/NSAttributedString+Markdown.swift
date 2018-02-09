@@ -14,9 +14,16 @@ extension NSAttributedString {
     
     private var markdownProperties: [MarkdownProperty] {
         return [
+            HeaderMarkdownProperty(6),
+            HeaderMarkdownProperty(5),
+            HeaderMarkdownProperty(4),
+            HeaderMarkdownProperty(3),
+            HeaderMarkdownProperty(2),
+            HeaderMarkdownProperty(1),
             BoldMarkdownProperty(),
             ItalicMarkdownProperty(),
             StrikethroughMarkdownProperty()
+            
         ]
     }
 }

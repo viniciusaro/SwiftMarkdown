@@ -19,3 +19,13 @@ extension String {
         return String(self[start..<end])
     }
 }
+
+extension String {
+    func repeated(_ times: UInt) -> String {
+        var string = ""
+        for _ in 0..<times {
+            string += self
+        }
+        return string
+    }
+}

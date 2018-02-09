@@ -21,6 +21,7 @@
 		63DF8856202B2338007155D6 /* NSAttributedString+SymbolicTraits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF8855202B2338007155D6 /* NSAttributedString+SymbolicTraits.swift */; };
 		63DF8858202B273E007155D6 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF8857202B273E007155D6 /* Font.swift */; };
 		63DF8E31202D4A5D007155D6 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF8E30202D4A5D007155D6 /* Token.swift */; };
+		63DF8E33202D602C007155D6 /* HeaderMarkdownProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DF8E32202D602C007155D6 /* HeaderMarkdownProperty.swift */; };
 		C6E76AC6A26AB9CE1839D19A /* Pods_SwiftMarkdownTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 860AECA845C33D088B4D9772 /* Pods_SwiftMarkdownTests.framework */; };
 		D6581A2139C17FD92032E69A /* Pods_SwiftMarkdown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAA4B2A6A0B041A300613547 /* Pods_SwiftMarkdown.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		63DF8855202B2338007155D6 /* NSAttributedString+SymbolicTraits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+SymbolicTraits.swift"; sourceTree = "<group>"; };
 		63DF8857202B273E007155D6 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		63DF8E30202D4A5D007155D6 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		63DF8E32202D602C007155D6 /* HeaderMarkdownProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMarkdownProperty.swift; sourceTree = "<group>"; };
 		860AECA845C33D088B4D9772 /* Pods_SwiftMarkdownTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftMarkdownTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		87C0766F82407C770405FAB4 /* Pods-SwiftMarkdownTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMarkdownTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMarkdownTests/Pods-SwiftMarkdownTests.debug.xcconfig"; sourceTree = "<group>"; };
 		97A90D17D2CC9255DDE90626 /* Pods-SwiftMarkdownTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftMarkdownTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SwiftMarkdownTests/Pods-SwiftMarkdownTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 			children = (
 				63DF8848202B22FE007155D6 /* BoldMarkdownProperty.swift */,
 				63DF8846202B22FE007155D6 /* EmptyMarkdownProperty.swift */,
+				63DF8E32202D602C007155D6 /* HeaderMarkdownProperty.swift */,
 				63DF8849202B22FE007155D6 /* ItalicMarkdownProperty.swift */,
 				63DF8845202B22FE007155D6 /* MarkdownProperty.swift */,
 				63DF8847202B22FE007155D6 /* StrikethroughMarkdownProperty.swift */,
@@ -409,6 +412,7 @@
 				63DF884E202B22FE007155D6 /* EmptyMarkdownProperty.swift in Sources */,
 				63DF884B202B22FE007155D6 /* String+Helpers.swift in Sources */,
 				63DF884D202B22FE007155D6 /* MarkdownProperty.swift in Sources */,
+				63DF8E33202D602C007155D6 /* HeaderMarkdownProperty.swift in Sources */,
 				63DF8852202B22FE007155D6 /* MarkdownParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

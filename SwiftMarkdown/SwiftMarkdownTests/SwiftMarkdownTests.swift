@@ -68,6 +68,19 @@ class SwiftMarkdownTests: QuickSpec {
                                        """.buttonCaption.markdown
                 expect(label).to(haveValidSnapshot())
             }
+            it("with headers") {
+                label.frame = CGRect(origin: .zero, size: CGSize(width: 450, height: 200))
+                label.textAlignment = .left
+                label.attributedText = """
+                                       # Swift Markdown Library \n
+                                       ## Swift Markdown Library \n
+                                       ### Swift Markdown Library \n
+                                       #### Swift Markdown Library \n
+                                       ##### Swift Markdown Library \n
+                                       ###### Swift Markdown Library \n
+                                       """.uppercased().markdown(font: label.font)
+                expect(label).to(haveValidSnapshot())
+            }
         }
     }
 }

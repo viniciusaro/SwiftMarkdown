@@ -30,6 +30,25 @@ let attributed = NSAttributedString(string: string, attributes: attributes)
 label.attributedText = attributed.markdown
 ```
 
+## Features
+
+### Emphasis
+```
+*Italic*
+**Bold**
+~~Strikethrough~~
+```
+
+### Headers
+```
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+```
+
 ## License
 
 SwiftMarkdown is released under an MIT license.

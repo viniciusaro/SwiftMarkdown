@@ -4,7 +4,7 @@ public protocol MarkdownProperty {
     var prefix: String { get }
     var suffix: String { get }
     var bodyPattern: String { get }
-    func transform(string: NSAttributedString) -> NSAttributedString
+    func transform(string original: NSAttributedString) -> NSAttributedString
 }
 
 public extension MarkdownProperty {

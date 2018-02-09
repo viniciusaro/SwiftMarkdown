@@ -22,4 +22,3 @@ extension NSAttributedString {
         return mutable
     }
 }
-
