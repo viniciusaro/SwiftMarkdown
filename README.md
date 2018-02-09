@@ -30,6 +30,32 @@ let attributed = NSAttributedString(string: string, attributes: attributes)
 label.attributedText = attributed.markdown
 ```
 
+## Installation
+
+### Cocoapods
+
+```
+pod 'SwiftMarkdown'
+```
+
+### Swift Package Manager
+
+Add the following as a dependency to your Package.swift:
+
+```swift
+.package(url: "https://github.com/viniciusaro/SwiftMarkdown.git", .upToNextMajor(from: "0.0.2"))
+```
+
+You also need to specify "SwiftMarkdown" as a dependency of the Target in which you wish to use SwiftMarkdown.
+
+```swift
+...
+targets: [
+  .target(
+    name: "MyApp",
+    dependencies: ["SwiftResolver", "SwiftMarkdown"]),
+...
+```
 ## Features
 
 ### Emphasis
